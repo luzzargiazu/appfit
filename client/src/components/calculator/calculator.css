@@ -4,26 +4,30 @@ body, html {
     padding: 0;
     height: 100%;
 }
-
 .mainContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 60px); /* Adjust this value if your navbar height changes */
+    min-height: calc(100vh - 60px);
     padding: 20px;
+    max-width: 1200px; 
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .calorieCalculator {
-    width: 700px;
+    width: 100%;
+    max-width: 150px; /* Limits the maximum width */
     background-color: rgba(255, 0, 0, 0.384);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    justify-content: flex-start;
     padding: 50px;
     gap: 20px;
     border-radius: 50px;
+    margin: 0 auto; /* Center the container */
 }
 
 .calculatorInputs {
@@ -36,15 +40,38 @@ body, html {
 .calculatorInputs label {
     display: flex;
     flex-direction: column;
+    margin-right:-20px;
+}
+.calculatorInputs label span {
+    margin-bottom: 5px;
+}
+
+.calculatorInputs input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px; /* Example limit for input width */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .calculatorInputs select,
 .calculatorInputs input[type="number"] {
     padding: 8px;
-    border: 1px solid #50505000;
-    border-radius: 3px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     font-size: 14px;
     width: 100%;
+    box-sizing: border-box; /* Ensures padding and border are included in width calculation */
+}
+
+.calculatorInputs select {
+    background-color: #f9f9f9;
+}
+
+.calculatorInputs input[type="number"] {
+    appearance: textfield; /* Removes default spinner arrows in some browsers */
 }
 
 .calorieCalculator button {
@@ -55,15 +82,19 @@ body, html {
     border: none;
     border-radius: 3px;
     cursor: pointer;
+    font-size: 16px; /* Adjust font size as needed */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .calorieCalculator button:hover {
-    background-color: #000000;
+    background-color: #333333; /* Darken background on hover */
+    color: #ffffff; /* Change text color on hover */
 }
 
 .calorieCalculator p {
     margin-top: 10px;
     font-size: 16px;
+    text-align: left;
 }
 
 footer {
@@ -73,4 +104,32 @@ footer {
     background-color: #333;
     color: #fff;
     text-align: center;
+}
+
+@media (max-width: 768px) {
+    .mainContainer {
+        padding: 10px;
+    }
+    .calorieCalculator {
+        padding: 30px;
+    }
+    .calculatorInputs input {
+        padding: 8px;
+    }
+    .calculatorInputs select,
+    .calculatorInputs input[type="number"] {
+        padding: 6px;
+    }
+ }
+
+
+@media (max-width: 480px) {
+    .mainContainer {
+        padding: 5px;
+    }
+    .calorieCalculator {
+        padding: 20px;
+        gap: 15px;
+        border-radius: 30px;
+    }
 }
