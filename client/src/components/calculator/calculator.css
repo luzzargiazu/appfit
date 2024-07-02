@@ -14,15 +14,17 @@ body, html {
     max-width: 1200px; 
     margin-top: 100px;
     margin-bottom: 100px;
+    margin-left: 00px;
+    margin-right: 300px;
 }
 
 .calorieCalculator {
     width: 100%;
-    max-width: 150px; /* Limits the maximum width */
+    max-width: 700px; /* Limits the maximum width */
     background-color: rgba(255, 0, 0, 0.384);
     display: flex;
     flex-direction: column;
-    align-items: left;
+    align-items: center;
     justify-content: flex-start;
     padding: 50px;
     gap: 20px;
@@ -40,7 +42,7 @@ body, html {
 .calculatorInputs label {
     display: flex;
     flex-direction: column;
-    margin-right:-20px;
+    margin-right:20px;
 }
 .calculatorInputs label span {
     margin-bottom: 5px;
@@ -52,7 +54,7 @@ body, html {
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 100%;
-    max-width: 400px; /* Example limit for input width */
+    max-width: 800px; /* Example limit for input width */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -68,6 +70,7 @@ body, html {
 
 .calculatorInputs select {
     background-color: #f9f9f9;
+    
 }
 
 .calculatorInputs input[type="number"] {
@@ -112,13 +115,19 @@ footer {
     }
     .calorieCalculator {
         padding: 30px;
+       max-width: 250px; 
     }
     .calculatorInputs input {
         padding: 8px;
+
     }
     .calculatorInputs select,
     .calculatorInputs input[type="number"] {
         padding: 6px;
+        max-width: 150px; 
+    }
+    .calculatorInputs label {
+        max-width: 100px;
     }
  }
 
@@ -131,5 +140,6 @@ footer {
         padding: 20px;
         gap: 15px;
         border-radius: 30px;
+        width: 250px; 
     }
 }
